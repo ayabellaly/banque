@@ -3,6 +3,7 @@ package Model;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Scanner;
 
 public class Banque {
 
@@ -133,6 +134,9 @@ public int getMaxClient() {
             }
         }
     }
+
+
+
 
 }
 

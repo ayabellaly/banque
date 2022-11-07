@@ -55,16 +55,19 @@ public class ServiceCrud
         return false;
     }
 
-     public boolean modifierCompte(Scanner clavier){
-        Compte compte = chercherlCompte(clavier);
-        if (compte != null) {
-            System.out.println("Entrer le nouveau solde");
-            double solde = clavier.nextDouble();
-            compte.setSolde(solde);
-            return true;
+    /* public boolean modifierCompte(Scanner clavier,int idcompte){
+        if (chercherlCompte(clavier) != null) {
+            for (int i = 0; i < banque.getTableCompte().length; i++) {
+                if (banque.getTableCompte()[i].getIdCompte() == idcompte) {
+                    System.out.println("Entrer le nouveau solde");
+                    double solde = clavier.nextDouble();
+                    banque.getTableCompte()[i].setSolde(solde);
+                    return true;
+                }
+            }
         }
-        return false;
-    }
+       return false;
+    }*/
 
 
 

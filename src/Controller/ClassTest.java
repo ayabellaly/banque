@@ -38,10 +38,11 @@ public class ClassTest {
         public static void main(String[] args) {
             Banque banque;
         double solde;
+
         LocalDate DateCreation;
         Client Proprietaire;
         Scanner sc=new Scanner(System.in);
-        ServiceCrud serviceCrud=new ServiceCrud();
+
         // TODO code application logic here
       int x=Menu();
 
@@ -55,14 +56,14 @@ public class ClassTest {
                 System.out.println("Entrer le mail du client");
                 String mail = sc.nextLine();
 
+
                 Proprietaire=new Client(nom,prenom,mail);
 
                 Compte c1 ;
                 System.out.println("Enter solde");
                 solde = sc.nextDouble();
-
-
                 DateCreation = LocalDate.now();
+
 
                 c1=new Compte(solde,Proprietaire,DateCreation);
 
@@ -87,11 +88,59 @@ public class ClassTest {
                 break;
 
 
+
             case 2:
-                    System.out.println("2-modification d'un compte");
+
+                   System.out.println("---------------modification d'un compte----------------");
+
+                System.out.println("Entrer le nom du client");
+                String Nom = sc.nextLine();
+                System.out.println("Entrer le prenom du client");
+                String Prenom = sc.nextLine();
+                System.out.println("Entrer le mail du client");
+                String Mail = sc.nextLine();
+
+
+                Client CLT1=new Client(Nom,Prenom,Mail);
+                    
+                    Compte C2 = new Compte(2000.0,CLT1 , LocalDate.now());
+                    C2.MODIFIER(sc);
+                    System.out.println("Compte modifié avec succès");
+                    System.out.println( C2.toString());
+
+
                 break;
 
             case 3:
+
+
+                break;
+
+
+
+
+
+
+            case 4:
+
+
+                break;
+
+
+            case 5:
+
+
+                break;
+
+
+            case 6:
+
+
+                break;
+
+            case 7:
+                System.out.println("---------------EXIT----------------");
+                System.exit(0);
 
 
                 break;
