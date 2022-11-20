@@ -2,8 +2,6 @@ package Model;
 
 
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Scanner;
 
 public class Banque {
 
@@ -12,17 +10,19 @@ public class Banque {
     private String emailBanque;
     private int maxCompte;
     private int maxClient;
-    private Compte[] tableCompte;
+    private Compte[] tableCompte=new Compte[maxCompte];
     private Client[] tableClient;
     private static int cmpBanque=0;
 
 
-    public Banque(String nomBanque, String emailBanque, int maxCompte, int maxClient) {
+    public Banque(String nomBanque, String emailBanque, int maxCompte, int maxClient, Compte[] tableCompte, Client[] tableClient) {
         this.idBanque = ++cmpBanque;
         this.nomBanque = nomBanque;
         this.emailBanque = emailBanque;
-        this.maxCompte = maxCompte;
+        this.maxCompte =    10;
         this.maxClient = maxClient;
+        this.tableCompte = new Compte[maxCompte];
+        this.tableClient = new Client[maxClient];
 
     }
 
@@ -113,6 +113,29 @@ public int getMaxClient() {
         }
     }
 
+    public void SupprimerCompte(Compte c){
+        for (int i = 0; i < tableCompte.length; i++) {
+            if(tableCompte[i].getIdCompte()==c.getIdCompte()){
+               for(int j=i;j<tableCompte.length-1;j++){
+                   tableCompte[j]=tableCompte[j+1];
+               }
+            }
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     @Override
     public String toString() {
         return "Banque{" +
@@ -136,8 +159,30 @@ public int getMaxClient() {
     }
 
 
+    public void AfficherCompte(){
+        for (int i = 0; i < tableCompte.length; i++) {
+            if(tableCompte[i]!=null){
+               // System.out.println(tableCompte[i]);
+                Compte C=tableCompte[i];
+                System.out.println(C.toString());
+
+            }
+        }
+    }
 
 
+    public void supprimerCompte(int num) {
+
+      for (int i = 0; i < tableCompte.length; i++) {
+            if(tableCompte[i].getIdCompte()==num){
+                for(int j=i;j<tableCompte.length-1;j++){
+                    tableCompte[j]=tableCompte[j+1];
+                }
+                break;
+            }
+        }
+
+    }
 }
 
 

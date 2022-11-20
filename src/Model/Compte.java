@@ -19,13 +19,11 @@ public class Compte {
         if (solde < 0) {
             System.out.println("le solde doit etre positif");
         } else {
-            // this.solde = solde;
+             this.solde = solde;
             this.DateCreation = DateCreation;
             this.Proprietaire = Proprietaire;
             this.idcompte = ++cpt;
             this.tablejournalisation = new String[10];
-
-
         }
     }
 
@@ -84,7 +82,8 @@ public class Compte {
 
     @Override
     public String toString() {
-        return "{" + "idcompte=" + idcompte + "     " + ", solde=" + solde + "      " + ", DateCreation=" + DateCreation + "      " + ", Proprietaire=" + Proprietaire.toString() + '}';
+        return "{" + "idcompte=" + idcompte + "     " + ", solde=" + this.solde + "      " + ", DateCreation=" + DateCreation + "      " + ", Proprietaire=" + Proprietaire.toString() + '}';
+
     }
 
     @Override
@@ -108,9 +107,17 @@ public class Compte {
         }
     }
 
+
+
+
+
+
+
     public int getIdCompte() {
         return idcompte;
     }
+
+
 
 
     public void MODIFIER(Scanner clavier) {
